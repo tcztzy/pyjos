@@ -2,3 +2,6 @@
 __pycache__
 secrets.json
 config.json
+dist
+MANIFEST
+
