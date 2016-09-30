@@ -9,10 +9,10 @@ PROJECT_DIR = Path(__file__).resolve().parent
 
 try:
     # 你懂的
-    with PROJECT_DIR.joinpath('', 'secrets.json').open() as handle:
+    with PROJECT_DIR.joinpath('secrets.json').open() as handle:
         SECRETS = json.load(handle)
     # 业务参数在此
-    with PROJECT_DIR.joinpath('', 'config.json').open() as handle:
+    with PROJECT_DIR.joinpath('config.json').open() as handle:
         CONFIG = json.load(handle)
 except IOError:
     raise
