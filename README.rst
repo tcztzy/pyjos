@@ -7,6 +7,6 @@ Pyjos is a Jingdong SDK wrote in Python which imitates the official PHP SDK.
 
 不过没关系，反正我也没打算按京东的调用示例写，谁让他不提供下载呢。
 
-目前在develop分支上已经可以跑通，等完善了TODO就发布pypi包吧。
+你可以使用pip install pyjos来安装本包.
 
-TODO: 完善测试，完善业务参数的request，and bug free。
+如果使用中有任何问题, 欢迎issue或者pr.
