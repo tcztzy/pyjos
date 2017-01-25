@@ -1,0 +1,2 @@
+class getcode(object):
+    pass
