@@ -31,7 +31,6 @@ class JdClient(object):
     def generate_sign(self, params):
         string_to_be_signed = self.app_secret
         for k, v in sorted(params.items()):
-            print(k, v)
             if not v.startswith('@'):
                 string_to_be_signed += '{}{}'.format(k, v)
         string_to_be_signed += self.app_secret
@@ -43,15 +42,14 @@ class JdClient(object):
         sys_params = {
             'app_key': self.app_key,
             'v': self.version,
-            'method': request.get_api_method_name(),
+            'method': request.api_method_name,
             'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         }
         if access_token is not None:
             sys_params['access_token'] = access_token
 
         # 获取业务参数
-        api_params = request.get_api_params()
-        sys_params[self.json_param_key] = api_params
+        sys_params[self.json_param_key] = request.api_params
 
         # 签名
         sys_params['sign'] = self.generate_sign(sys_params)

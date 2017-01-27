@@ -4,7 +4,7 @@ import json
 import os
 
 from pyjos.client import JdClient
-from pyjos.request import service
+from pyjos import request as jingdong
 
 PROJECT_DIR = os.path.dirname(__file__)
 
@@ -34,17 +34,7 @@ except IOError:
     raise
 
 
-class ExampleRequest(object):
-    pass
-
-example_request = ExampleRequest()
-
-for k, v in CONFIG.items():
-    setattr(example_request, k, v)
-
-example_request.get_api_method_name = lambda: 'jingdong.service.promotion.getcode'
-
-example_request.get_api_params = lambda: str(CONFIG)
+example_request = jingdong.service.promotion.getcode(**CONFIG)
 
 client = JdClient()
 client.app_key = SECRETS['app_key']
