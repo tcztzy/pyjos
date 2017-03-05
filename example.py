@@ -34,9 +34,14 @@ except IOError:
     raise
 
 
-example_request = jingdong.service.promotion.getcode(**CONFIG)
+def main():
+    """Main function"""
+    example_request = jingdong.service.promotion.getcode(**CONFIG)
 
-client = JdClient()
-client.app_key = SECRETS['app_key']
-client.app_secret = SECRETS['app_secret']
-print(client.execute(example_request, SECRETS['access_token']))
+    client = JdClient()
+    client.app_key = SECRETS['app_key']
+    client.app_secret = SECRETS['app_secret']
+    print(client.execute(example_request, SECRETS['access_token']))
+
+if __name__ == '__main__':
+    main()

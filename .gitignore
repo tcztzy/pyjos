@@ -4,4 +4,4 @@ secrets.json
 config.json
 dist
 MANIFEST
-
+.vscode
